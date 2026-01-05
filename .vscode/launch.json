@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/anoe/Documents/c_mini_Project/shopping_list_system",
+      "program": "/Users/anoe/Documents/c_mini_Project/shopping_list_system/build/Debug/outDebug"
+    }
+  ]
+}
