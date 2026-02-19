@@ -13,21 +13,31 @@ int main()
     while(1){
         int A;
         printAction();
-        scanf("%d", &A);
-        getchar();
+        if (scanf("%d", &A) != 1)
+    {
+        printf("Invalid input! Please enter a number.\n");
+        while (getchar() != '\n');  
+        continue;
+    }
+
+    getchar();  
+
         switch(A)
         {
-            case 1: menu = addAction(menu,&count);
-                    printMenu(&menu[count-1]);
-                    saveNew("shopping.txt","ing.txt",menu,&count);
-                    break;
-            case 3: deleteAction(menu,&count);
-                    saveDelete("shopping.txt","ing.txt",menu,&count);break;
-            case 4: pickMenu(menu,&count);break;
-            case 5: showMenu(menu,&count);break;
+            case 1: {
+                    if(addAction(&menu,&count)){
+                        printMenu(&menu[count-1]);
+                        saveNew("shopping.txt","ing.txt",menu,&count);
+                    }
+                    
+                    break;}  
+            
+            case 2: viewallMenu(menu,&count);break;
+            case 3: pickMenu(menu,&count);break;
 
 
-            case 6: return 0;
+            case 4: return 0;
+            default: printf("'Invalid Input'\n");
                     
         }
     }
